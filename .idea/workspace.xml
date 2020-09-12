@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78db7f7a-a300-460d-b0e9-1fcc377ef148" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/seeds/ProductCommentSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +168,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599298149290</updated>
       <workItem from="1599298150617" duration="9648000" />
-      <workItem from="1599837912484" duration="8481000" />
+      <workItem from="1599837912484" duration="9294000" />
     </task>
     <servers />
   </component>
