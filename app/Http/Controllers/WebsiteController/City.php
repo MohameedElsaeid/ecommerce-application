@@ -4,16 +4,16 @@
 namespace App\Http\Controllers\WebsiteController;
 
 
-class Cities
+class City
 {
     private $id;
     private $name;
     private $areas = [];
 
     /**
-     * @param Areas $areas
+     * @param Area $areas
      */
-    public function setAreas(Areas $areas): void
+    public function setAreas(Area $areas): void
     {
         $this->areas[] = $areas;
     }
@@ -22,9 +22,9 @@ class Cities
     public function toArray()
     {
         return [
-            'id' => $this->getId(),
-            'name' => $this->getName(),
-            'areas' => array_map(function (Areas $areas) {
+            'cityId' => $this->getId(),
+            'cityName' => $this->getName(),
+            'areas' => array_map(function (Area $areas) {
                 return $areas->toArray();
             }, $this->areas)
         ];

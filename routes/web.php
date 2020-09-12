@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::namespace('WebsiteController')->group(function () {
+//    Route::middleware('auth:web')->group(function () {
     Route::get('/', 'HomePageController@index');
+    Route::get('/product/{id}', 'HomePageController@show')->name('product.byId');
+//    });
 });
-//Auth::routes();
+Auth::routes();

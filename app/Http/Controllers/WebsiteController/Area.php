@@ -4,7 +4,7 @@
 namespace App\Http\Controllers\WebsiteController;
 
 
-class Areas
+class Area
 {
 
     private $id;
