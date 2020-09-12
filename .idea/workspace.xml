@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78db7f7a-a300-460d-b0e9-1fcc377ef148" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebsiteController/Areas.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WebsiteController/Area.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebsiteController/Cities.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WebsiteController/City.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebsiteController/HomePageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WebsiteController/HomePageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/ProductCommentSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,13 +143,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/website" />
+      <recent name="$PROJECT_DIR$/resources/views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/js" />
       <recent name="$PROJECT_DIR$/public/css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views" />
     </key>
   </component>
   <component name="RunManager">
@@ -173,7 +168,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599298149290</updated>
       <workItem from="1599298150617" duration="9648000" />
-      <workItem from="1599837912484" duration="8128000" />
+      <workItem from="1599837912484" duration="8481000" />
     </task>
     <servers />
   </component>
@@ -196,10 +191,10 @@
       <screen x="0" y="27" width="1920" height="1011" />
     </state>
     <state x="555" y="236" width="799" height="599" key="NewPhpClassDialog/0.27.1920.1011@0.27.1920.1011" timestamp="1599824374008" />
-    <state x="755" y="454" width="399" height="163" key="NewPhpFileDialog" timestamp="1599903386328">
+    <state x="755" y="454" width="399" height="163" key="NewPhpFileDialog" timestamp="1599903433576">
       <screen x="0" y="27" width="1920" height="1011" />
     </state>
-    <state x="755" y="454" width="399" height="163" key="NewPhpFileDialog/0.27.1920.1011@0.27.1920.1011" timestamp="1599903386328" />
+    <state x="755" y="454" width="399" height="163" key="NewPhpFileDialog/0.27.1920.1011@0.27.1920.1011" timestamp="1599903433576" />
     <state x="449" y="167" width="1022" height="736" key="SettingsEditor" timestamp="1599305720214">
       <screen x="0" y="27" width="1920" height="1011" />
     </state>
