@@ -250,9 +250,11 @@
                             with new offers</h2>
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="enter email address"
-                                   aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                   aria-label="Recipient's username" name="email" id="email"
+                                   aria-describedby="basic-addon2" required>
+                            <input id="emailSubscribeUrl" type="hidden" value="{{route('sendEmail',['%'])}}">
                             <div class="input-group-append">
-                                <a href="#" class="input-group-text btn_2" id="basic-addon2">subscribe now</a>
+                                <a href="" class="input-group-text btn_2" id="emailSubscribe">subscribe now</a>
                             </div>
                         </div>
                     </div>
@@ -277,4 +279,23 @@
         </div>
     </section>
     <!--::subscribe_area part end::-->
+@endsection
+@section('script')
+    <script>
+        $('#emailSubscribe').on('click', (event) => {
+            event.preventDefault();
+            const email = $('#email').val();
+            const emailSubscribeUrl = $('#emailSubscribeUrl').val();
+            $.ajax({
+                method: "GET",
+                url: emailSubscribeUrl.replace('%', email),
+                success: (data) => {
+                    console.log(data)
+                },
+                error: (error) => {
+                    console.log(error)
+                }
+            });
+        })
+    </script>
 @endsection

@@ -114,6 +114,9 @@
 <script src="{{asset('js/mail-script.js')}}"></script>
 <script src="{{asset('js/theme.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
+
+@yield('script')
+
 </body>
 
 </html>
