@@ -128,9 +128,12 @@
                                 @foreach($awesomeProducts as $product)
                                     <div class="col-lg-3 col-sm-6">
                                         <div class="single_product_item">
-                                            <img src="{{asset('img/product/'.$product->images()->first()->image)}}" alt="">
+                                            <img src="{{asset('img/product/'.$product->images()->first()->image)}}"
+                                                 alt="">
                                             <div class="single_product_text">
-                                                <h4><a href="{{route('product.byId',[$product->product_id])}}">{{$product->title}}</a></h4>
+                                                <h4>
+                                                    <a href="{{route('product.byId',[$product->product_id])}}">{{$product->title}}</a>
+                                                </h4>
                                                 <h3>{{$product->price}}</h3>
                                                 <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                                             </div>
@@ -264,36 +267,11 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
-                    <div class="single_client_logo">
-                        <img src="img/client_logo/client_logo_1.png" alt="">
-                    </div>
-                    <div class="single_client_logo">
-                        <img src="img/client_logo/client_logo_2.png" alt="">
-                    </div>
-                    <div class="single_client_logo">
-                        <img src="img/client_logo/client_logo_3.png" alt="">
-                    </div>
-                    <div class="single_client_logo">
-                        <img src="img/client_logo/client_logo_4.png" alt="">
-                    </div>
-                    <div class="single_client_logo">
-                        <img src="img/client_logo/client_logo_5.png" alt="">
-                    </div>
-                    <div class="single_client_logo">
-                        <img src="img/client_logo/client_logo_3.png" alt="">
-                    </div>
-                    <div class="single_client_logo">
-                        <img src="img/client_logo/client_logo_1.png" alt="">
-                    </div>
-                    <div class="single_client_logo">
-                        <img src="img/client_logo/client_logo_2.png" alt="">
-                    </div>
-                    <div class="single_client_logo">
-                        <img src="img/client_logo/client_logo_3.png" alt="">
-                    </div>
-                    <div class="single_client_logo">
-                        <img src="img/client_logo/client_logo_4.png" alt="">
-                    </div>
+                    @foreach($brands as $brand)
+                        <div class="single_client_logo">
+                            <img src="{{asset('img/client_logo/'.$brand->brand_image)}}" alt="">
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
