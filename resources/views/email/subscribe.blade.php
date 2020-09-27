@@ -1,1 +1,1 @@
-subscribe Email TEST
+subscribe Email TEST {{$data['hello']}}

@@ -29,6 +29,9 @@ class SubscribeEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Subscribe Email')->view('email.subscribe');
+        return $this
+            ->from('E-Commerce@sales.com')
+            ->subject('Subscribe Email')
+            ->view('email.subscribe');
     }
 }
