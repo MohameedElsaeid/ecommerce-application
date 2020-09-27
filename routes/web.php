@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+use App\Mail\SubscribeEmail;
+use Illuminate\Support\Facades\Mail;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,12 +21,11 @@ Route::namespace('WebsiteController')->group(function () {
 //    Route::middleware('auth:web')->group(function () {
     Route::get('/', 'HomePageController@index');
     Route::get('/product/{id}', 'HomePageController@show')->name('product.byId');
-//    Route::get('send/email/{email}', 'SendEmailController@send')->name('sendEmail');
-    Route::get('send/email/{email}', function ($email) {
-//        dd(env('MAIL_PASSWORD'));
-        \Illuminate\Support\Facades\Mail::to($email)
+    Route::get('send/email/{email}', 'SendEmailController@send')->name('sendEmail');
+  //  dd(env('MAIL_PASSWORD'));
+      /*   \Illuminate\Support\Facades\Mail::to($email)
             ->send(new \App\Mail\SubscribeEmail([]));
-    })->name('sendEmail');
+    })->name('sendEmail'); */
 //    });
 });
 Auth::routes();
