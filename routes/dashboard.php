@@ -21,4 +21,11 @@ Route::namespace('DashboardController')->group(function () {
         Route::get('/create', 'CategoryController@create')->name('category.create');
 
     });
+
+   
+
+    Route::prefix('products')->group(function (){
+        Route::get('/', 'ProductController@index')->name('product.index');
+    
+    });
 });
