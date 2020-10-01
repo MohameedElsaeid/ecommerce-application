@@ -28,4 +28,9 @@ Route::namespace('DashboardController')->group(function () {
         Route::get('/', 'ProductController@index')->name('product.index');
     
     });
+
+    Route::prefix('users')->group(function (){
+        Route::get('/', 'UserController@index')->name('user.index');
+    
+    });
 });

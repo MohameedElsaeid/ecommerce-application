@@ -21,16 +21,14 @@ class CategoryController extends Controller
         return view('dashboard.categories.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        $data=[];
-        $data['title']=$_POST['title'];
-        $data['description']=$_POST['description'];
-        $data['category_image']=$_POST['category_image'];
-        /* $category=Category::insert('insert into catgeories (title,description,category_image) values (?,?,?,?) []'); */
-
-
+        $request->validate([
+            'title' => 'required',
+            'email' => 'required',
+        ]);
+        Category::create($request->all);
+        return json_encode(array(
+            "statusCode"=>200));
     }
-
 }
-
