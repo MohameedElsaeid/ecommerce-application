@@ -79,13 +79,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/charts/chartjs.html" class="nav-link">
+                        <a href="{{route('category.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>All Categories</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
+                        <a href="{{route('category.create')}}"class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Create new category</p>
                             </a>
