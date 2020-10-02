@@ -3,16 +3,23 @@
 use Illuminate\Support\Facades\Route;
 
 Route::namespace('DashboardController')->group(function () {
-    Route::get('dashboard/', 'HomeController@index');
+    Route::group(['prefix' => 'dashboard'], function () {
+        Route::get('/', 'HomeController@index');
 
-    Route::prefix('brands')->group(function () {
-        Route::get('/', 'BrandController@index')->name('brand.index');
+        Route::prefix('brands')->group(function () {
+            Route::get('/', 'BrandController@index')->name('brand.index');
+            Route::get('/create', 'BrandController@create')->name('brand.create');
+            Route::post('/store', 'BrandController@store')->name('brand.store');
+            Route::get('/edit/{brand}', 'BrandController@edit')->name('brand.edit');
+            Route::put('/update', 'BrandController@update')->name('brand.update');
+        });
 
-        Route::get('/create', 'BrandController@create')->name('brand.create');
-        Route::post('/store', 'BrandController@store')->name('brand.store');
+        Route::group(['prefix' => 'categories'], function () {
+            Route::get('/', 'CategoryController@index')->name('category.index');
+            Route::get('/create', 'CategoryController@create')->name('category.create');
+            Route::post('/store', 'CategoryController@store')->name('category.store');
+        });
 
-        Route::get('/edit/{brand}', 'BrandController@edit')->name('brand.edit');
-        Route::put('/update', 'BrandController@update')->name('brand.update');
 
     });
 });
