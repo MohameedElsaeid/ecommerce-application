@@ -32,15 +32,4 @@ class BrandRepository extends BaseRepository implements IBrandRepository
         $this->create($data);
     }
 
-    public function createVendorBrand($data)
-    {
-        $data['name'];
-        $data['approved'] = false;
-        $data['vendor_id'] = 8;
-        $this->create($data);
-    }
-    private function C(){}
-    private function C(){}
-    private function C(){}
-
 }
