@@ -6,26 +6,41 @@ namespace App\Repositories;
 
 use App\Brand;
 
-class BrandRepository implements IBrandRepository
+/**
+ * Class BrandRepository
+ * @package App\Repositories
+ */
+class BrandRepository extends BaseRepository implements IBrandRepository
 {
-    private $brandModel;
-
+    /**
+     * BrandRepository constructor.
+     * @param Brand $brand
+     */
     public function __construct(Brand $brand)
     {
-        $this->brandModel = $brand;
+        $this->model = $brand;
     }
 
-    public function all()
-    {
-        return $this->brandModel->get();
-    }
-
-    public function create($request)
+    /**
+     * @param $request
+     */
+    public function createNewBrand($request)
     {
         $name = $request->file('brand_image')->store('brandImages');
         $data = $request->all();
         $data['brand_image'] = $name;
-        $this->brandModel->create($data);
+        $this->create($data);
     }
+
+    public function createVendorBrand($data)
+    {
+        $data['name'];
+        $data['approved'] = false;
+        $data['vendor_id'] = 8;
+        $this->create($data);
+    }
+    private function C(){}
+    private function C(){}
+    private function C(){}
 
 }

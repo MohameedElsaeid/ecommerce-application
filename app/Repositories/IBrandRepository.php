@@ -6,7 +6,7 @@ namespace App\Repositories;
 
 interface IBrandRepository
 {
-    public function all();
+    public function createNewBrand($data);
 
-    public function create($data);
+    public function createVendorBrand($date);
 }
