@@ -29,7 +29,6 @@ class BrandController extends Controller
      */
 
 
-
     public function __construct(IBrandRepository $brandRepository)
     {
         $this->brand = $brandRepository;
@@ -40,10 +39,9 @@ class BrandController extends Controller
      */
 
 
-
     public function index()
     {
-        $brands = $this->brand->all();
+        $brands = $this->brand->get();
         return view('dashboard.brands.index', ['brands' => $brands]);
     }
 
@@ -52,7 +50,6 @@ class BrandController extends Controller
      */
 
 
-     
     public function create()
     {
         return view('dashboard.brands.create');
@@ -64,7 +61,7 @@ class BrandController extends Controller
      */
     public function store(CreateBrandRequest $request)
     {
-        $this->brand->create($request);
+        $this->brand->createNewBrand($request);
         return redirect(route('brand.index'))->with('success', 'Brand Created Successfully');
     }
 
@@ -72,7 +69,7 @@ class BrandController extends Controller
     public function edit($brand_id)
     {
         $brand = Brand::with(['brand_image'])->find($brand_id);
-        return view('dashboard.brands.edit',['brand'=>$brand]);
+        return view('dashboard.brands.edit', ['brand' => $brand]);
     }
 
     public function update()
