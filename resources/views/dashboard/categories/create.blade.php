@@ -9,19 +9,22 @@
                 <div class="card-header">
                     <h3 class="card-title">Create Category</h3>
                 </div>
-                <form role="form" {{-- method="POST" action="{{ route('category.index') }}" --}} enctype="multipart/form-data">
+                <form role="form" method="POST" id="catgeoryForm" enctype="multipart/form-data">
+                    {{-- method="POST" action="{{ route('category.index') }}" --}}
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
                             <label for="categorytitle">Category Title</label>
                             <input type="text" class="form-control" id="title" name="title"
-                                placeholder="Enter category title" value="{{ old('categorytitle') }}">
+                                   placeholder="Enter category title" value="{{ old('categorytitle') }}">
                         </div>
                         <div class="form-group">
                             <label for="categorydescription">Category Description</label>
                             <input type="text" class="form-control" id="description" name="description"
-                                placeholder="Enter category description" value="{{ old('categorydescription') }}">
+                                   placeholder="Enter category description" value="{{ old('categorydescription') }}">
                         </div>
+                        <input type="hidden" value="{{route('category.store')}}" id="createCategoryUrl">
+                        <input type="hidden" value="image" id="image">
                         {{-- <div class="form-group">
                             <label for="exampleInputFile">Category Image</label>
                             <div class="input-group">
@@ -43,39 +46,30 @@
 
 @section('script')
     <script>
-        $(document).ready(function() {
-
-            $('#butsave').on('click', function() {
-                var title = $('#title').val();
-                var description = $('#description').val();
-                if (title != "" && description != "" ) {
-                    //   $("#butsave").attr("disabled", "disabled");
-                   /*  $.ajax({
-                        url: "/categories",
-                        type: "POST",
-                        data: {
-                            /* _token: $("#csrf").val(), */
-                            type: 1,
-                            title: title,
-                            description: description,
-                        },
-                        cache: false,
-                        success: function(dataResult) {
-                            console.log(dataResult);
-                            var dataResult = JSON.parse(dataResult);
-                            if (dataResult.statusCode == 200) {
-                                window.location = "/categories";
-                            } else if (dataResult.statusCode == 201) {
-                                alert("Error occured !");
-                            }
-
-                        }
-                    }); */
-                } else {
-                    alert('Please fill all the field !');
+        $('#catgeoryForm').on('submit', (e) => {
+            e.preventDefault();
+            const title = $('#title').val();
+            const description = $('#description').val();
+            const image = $('#image').val();
+            const createCategoryUrl = $('#createCategoryUrl').val();
+            const _token = $("input[name='_token']").val();
+            $.ajax({
+                url: createCategoryUrl,
+                method: 'POST',
+                data: {
+                    title,
+                    description,
+                    image,
+                    _token
+                },
+                success: (data) => {
+                    if (data.success) {
+                        history.back()
+                    }
+                },
+                error: (error) => {
                 }
             });
-        });
-
+        })
     </script>
 @endsection

@@ -28,7 +28,7 @@
                                     <td>{{$brand->brand_name}}</td>
                                     <td>{{$brand->brand_image}}</td>
                                     <td>
-                                      {{--   <button><a href="{{route('brand.edit',[$brand->$brand_id])}}">Edit</a></button> --}}
+                                        <button><a href="{{route('brand.edit',[$brand])}}">Edit</a></button>
                                     </td>
                                 </tr>
                             @endforeach
