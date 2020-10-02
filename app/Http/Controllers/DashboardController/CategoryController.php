@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\DashboardController;
 use App\Category;
 use App\Http\Controllers\Controller;
+use Dotenv\Result\Success;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -43,8 +44,7 @@ class CategoryController extends Controller
             'email' => 'required',
         ]);
         Category::create($request->all);
-        return json_encode(array(
-            "statusCode"=>200));
+        return response()->json(['success' => true ]);
     }
 
     /**

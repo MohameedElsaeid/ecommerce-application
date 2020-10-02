@@ -50,7 +50,7 @@
                 var description = $('#description').val();
                 if (title != "" && description != "" ) {
                     //   $("#butsave").attr("disabled", "disabled");
-                    $.ajax({
+                   /*  $.ajax({
                         url: "/categories",
                         type: "POST",
                         data: {
@@ -70,7 +70,7 @@
                             }
 
                         }
-                    });
+                    }); */
                 } else {
                     alert('Please fill all the field !');
                 }

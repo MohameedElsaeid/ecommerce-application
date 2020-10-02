@@ -19,6 +19,7 @@ Route::namespace('DashboardController')->group(function () {
     Route::prefix('categories')->group(function (){
         Route::get('/', 'CategoryController@index')->name('category.index');
         Route::get('/create', 'CategoryController@create')->name('category.create');
+        Route::post('/store', 'CategoryController@store')->name('category.store');
 
     });
 
