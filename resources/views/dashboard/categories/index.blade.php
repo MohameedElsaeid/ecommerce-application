@@ -19,7 +19,8 @@
                                 <th>Category Title</th>
                                 <th>Category Description</th>
                                 <th>Category Image</th>
-                                <th>Category Image</th>
+                                <th>Is featured </th> 
+                
                             </tr>
                             </thead>
                             <tbody>
@@ -29,6 +30,7 @@
                                     <td>{{$category->title}}</td>
                                     <td>{{$category->description}}</td>
                                     <td>{{$category->image}}</td>
+                                    <td>{{$category->is_featured ? 'TRUE':'False'}}</td>
                                     <td>
                                       {{--   <button><a href="{{route('brand.edit',[$brand->$brand_id])}}">Edit</a></button> --}}
                                     </td>

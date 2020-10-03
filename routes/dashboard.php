@@ -21,24 +21,16 @@ Route::namespace('DashboardController')->group(function () {
         });
 
 
+        Route::group(['prefix' => 'products'], function () {
+            Route::get('/', 'ProductController@index')->name('product.index');
+            Route::get('/create', 'ProductController@create')->name('product.create');
+            Route::post('/store', 'ProductController@store')->name('product.store');
+        });
+        Route::prefix('users')->group(function (){
+            Route::get('/', 'UserController@index')->name('user.index');
+        
+        });
+
     });
-
-    Route::prefix('categories')->group(function (){
-        Route::get('/', 'CategoryController@index')->name('category.index');
-        Route::get('/create', 'CategoryController@create')->name('category.create');
-        Route::post('/store', 'CategoryController@store')->name('category.store');
-
-    });
-
    
-
-    Route::prefix('products')->group(function (){
-        Route::get('/', 'ProductController@index')->name('product.index');
-    
-    });
-
-    Route::prefix('users')->group(function (){
-        Route::get('/', 'UserController@index')->name('user.index');
-    
-    });
 });

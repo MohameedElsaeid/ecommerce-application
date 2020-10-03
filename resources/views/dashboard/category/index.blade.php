@@ -1,9 +1,9 @@
-@extends('layouts.DashboardLayouts.master')
+{{-- @extends('layouts.DashboardLayouts.master')
 @section('bread-crumbs')
     <li class="breadcrumb-item active">All Categories</li>
 @endsection
 @section('content')
-    <div class="container-fluid">
+   {{--  <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -46,9 +46,9 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
-    </div>
-@endsection
-@section('script')
+    </div> --}}
+@endsection --}}
+{{-- @section('script')
     <script>
         $('#example2').DataTable({
             "paging": true,
@@ -61,3 +61,7 @@
         });
     </script>
 @endsection
+ --}}
+
+
+ INDEXXXX

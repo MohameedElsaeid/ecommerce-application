@@ -9,8 +9,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Create Category</h3>
                 </div>
-                <form role="form" method="POST" id="catgeoryForm" enctype="multipart/form-data">
-                    {{-- method="POST" action="{{ route('category.index') }}" --}}
+                <form role="form" method="POST" action="{{ route('category.store') }}" id="catgeoryForm" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
@@ -23,9 +22,9 @@
                             <input type="text" class="form-control" id="description" name="description"
                                    placeholder="Enter category description" value="{{ old('categorydescription') }}">
                         </div>
-                        <input type="hidden" value="{{route('category.store')}}" id="createCategoryUrl">
+                       {{--  <input type="hidden" value="{{route('category.store')}}" id="createCategoryUrl"> --}}
                         <input type="hidden" value="image" id="image">
-                        {{-- <div class="form-group">
+                        <div class="form-group">
                             <label for="exampleInputFile">Category Image</label>
                             <div class="input-group">
                                 <div class="custom-file">
@@ -33,8 +32,9 @@
                                     <label class="custom-file-label" for="CategoryImage">Choose file</label>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
+                   
                     <div class="card-footer">
                         <button type="submit" id="butsave" class="btn btn-primary">Submit</button>
                     </div>
@@ -43,7 +43,7 @@
         </div>
     </div>
 @endsection
-
+{{-- 
 @section('script')
     <script>
         $('#catgeoryForm').on('submit', (e) => {
@@ -72,4 +72,4 @@
             });
         })
     </script>
-@endsection
+@endsection --}}
