@@ -6,6 +6,8 @@ use App\Brand;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProductRequest;
+use App\Repositories\IBrandRepository;
+use App\Repositories\ICategoryRepository;
 use App\Repositories\IProductRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -21,15 +23,29 @@ class ProductController extends Controller
      * @var IProductRepository
      */
     private $productRepository;
+    /**
+     * @var ICategoryRepository
+     */
+    private $categoryRepository;
+    /**
+     * @var IBrandRepository
+     */
+    private $brandRepository;
 
     /**
      * CategoryController constructor.
      * @param IProductRepository $productRepository
      */
 
-    public function __construct(IProductRepository $productRepository)
+    public function __construct(
+        IProductRepository $productRepository,
+        IBrandRepository $brandRepository,
+        ICategoryRepository $categoryRepository
+    )
     {
-        $this->productrepository = $productRepository;
+        $this->productRepository = $productRepository;
+        $this->brandRepository = $brandRepository;
+        $this->categoryRepository = $categoryRepository;
     }
 
     /**
@@ -38,24 +54,19 @@ class ProductController extends Controller
 
     public function index()
     {
-        $data['products'] = $this->productrepository->get();
+        $data['products'] = $this->productRepository->get();
         return view('dashboard.products.index', $data);
     }
 
     /**
-     * @return Application|Factory|View
-     */
-
-
-    /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return
      */
     public function create()
     {
-        $brands = Brand::all();
-        $categories = Category::all();
+        $brands = $this->brandRepository->get();
+        $categories = $this->categoryRepository->get();
         return view('dashboard.products.create', [
             'categories' => $categories,
             'brands' => $brands,
@@ -68,8 +79,7 @@ class ProductController extends Controller
      */
     public function store(CreateProductRequest $request)
     {
-
-        $this->productrepository->createnewProduct($request);
+        $this->productRepository->createProduct($request);
         return redirect(route('product.index'))->with('success', 'Product Created Successfully');
     }
 

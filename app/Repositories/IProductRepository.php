@@ -7,5 +7,6 @@ namespace App\Repositories;
 interface IProductRepository
 {
     public function get();
-    public function createnewProduct($data);
+
+    public function createProduct($request);
 }
