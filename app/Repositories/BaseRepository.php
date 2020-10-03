@@ -15,7 +15,7 @@ abstract class BaseRepository
     /**
      * @var Model
      */
-    public Model $model;
+    public  $model;
 
     /**
      * @param array $data

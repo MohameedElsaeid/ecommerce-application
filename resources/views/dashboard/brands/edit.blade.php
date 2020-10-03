@@ -1,4 +1,4 @@
-@extends('layouts.DashboardLayouts.master')
+{{-- @extends('layouts.DashboardLayouts.master')
 
 @section('bread-crumbs')
     <li class="breadcrumb-item active">Edit</li>
@@ -17,7 +17,7 @@
                         <div class="form-group">
                             <label for="brandName">Brand Name</label>
                             <input type="text" class="form-control" id="brandName" name="brand_name"
-                                   placeholder="Enter brand name" value="{{$brand->brand_name}}">
+                                   placeholder="{{$brand->brand_name}}" value="{{$brand->brand_name}}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Brand Image</label>
@@ -25,7 +25,7 @@
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="brandImage"
                                            value="{{$brand->brand_image}}" name="brand_image">
-                                    <label class="custom-file-label" for="brandImage">Choose file</label>
+                                    <label class="custom-file-label" for="brandImage">{{$brand->brand_image}}</label>
                                 </div>
                             </div>
                         </div>
@@ -38,3 +38,5 @@
         </div>
     </div>
 @endsection
+ --}}
+ {{$brand}}

@@ -1,6 +1,6 @@
 @extends('layouts.DashboardLayouts.master')
 @section('bread-crumbs')
-    <li class="breadcrumb-item active">All Brands</li>
+    <li class="breadcrumb-item active">All Users</li>
 @endsection
 @section('content')
     <div class="container-fluid">
@@ -14,24 +14,28 @@
                     <div class="card-body">
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Brands Name</th>
-                                <th>Brand Image</th>
-                                <th>Action</th>
-                            </tr>
+                                <tr>
+                                    <th>Serial</th>
+                                    <th>User Name</th>
+                                    <th>Email</th>
+                                    <th>Password</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            @foreach($brands as $brand)
-                                <tr>
-                                    <td style="width: 100px">{{$brand->id}}</td>
-                                    <td>{{$brand->brand_name}}</td>
-                                    <td>{{$brand->brand_image}}</td>
-                                    <td>
-                                        <button><a href="{{route('brand.edit',[$brand])}}">Edit</a></button>
-                                    </td>
-                                </tr>
-                            @endforeach
+                                @foreach ($users as $user)
+                                    <tr>
+                                        <td style="width: 100px">{{ $user->id }}</td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->password }}</td>
+                                    
+                                        <td>
+                                            {{-- <button><a
+                                                    href="{{ route('brand.edit', [$brand->$brand_id]) }}">Edit</a></button>
+                                            --}}
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -54,5 +58,6 @@
             "autoWidth": true,
             "responsive": true,
         });
+
     </script>
 @endsection

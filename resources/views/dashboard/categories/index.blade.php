@@ -1,6 +1,6 @@
 @extends('layouts.DashboardLayouts.master')
 @section('bread-crumbs')
-    <li class="breadcrumb-item active">All Brands</li>
+    <li class="breadcrumb-item active">All Categories</li>
 @endsection
 @section('content')
     <div class="container-fluid">
@@ -16,19 +16,23 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Brands Name</th>
-                                <th>Brand Image</th>
-                                <th>Action</th>
+                                <th>Category Title</th>
+                                <th>Category Description</th>
+                                <th>Category Image</th>
+                                <th>Is featured </th> 
+                
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($brands as $brand)
+                            @foreach($categories as $category)
                                 <tr>
-                                    <td style="width: 100px">{{$brand->id}}</td>
-                                    <td>{{$brand->brand_name}}</td>
-                                    <td>{{$brand->brand_image}}</td>
+                                    <td style="width: 100px">{{$category->id}}</td>
+                                    <td>{{$category->title}}</td>
+                                    <td>{{$category->description}}</td>
+                                    <td>{{$category->image}}</td>
+                                    <td>{{$category->is_featured ? 'TRUE':'False'}}</td>
                                     <td>
-                                        <button><a href="{{route('brand.edit',[$brand])}}">Edit</a></button>
+                                      {{--   <button><a href="{{route('brand.edit',[$brand->$brand_id])}}">Edit</a></button> --}}
                                     </td>
                                 </tr>
                             @endforeach
