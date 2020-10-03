@@ -7,7 +7,7 @@ use App\Http\Requests\CreateProductRequest;
 use App\Repositories\IProductRepository;
 use Illuminate\Http\Request;
 
-class ProductConroller extends Controller
+class ProductController extends Controller
 {
 
 
@@ -20,10 +20,10 @@ class ProductConroller extends Controller
      * @param IProductRepository $categoryRepository
      */
     
-    /* public function __construct(IProductRepository $productrepository )
+    public function __construct(IProductRepository $productrepository )
     {
         $this->productrepository = $productrepository;
-    } */
+    }
 
     /**
      * @return Application|Factory|View
