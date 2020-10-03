@@ -8,6 +8,14 @@ class Product extends Model
 {
     protected $primaryKey = 'product_id';
 
+    protected $fillable = [
+        'title',
+        'price',
+        'description ',
+        'category_id',
+        'brief',
+    ];
+
     public function images()
     {
         return $this->hasMany(ProductImage::class, 'product_id', 'product_id');

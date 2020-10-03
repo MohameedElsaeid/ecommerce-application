@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\DashboardController;
 
+use App\Brand;
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProductRequest;
 use App\Repositories\IProductRepository;
@@ -52,7 +54,12 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('dashboard.products.create');
+        $brands = Brand::all();
+        $categories = Category::all();
+        return view('dashboard.products.create', [
+            'categories' => $categories,
+            'brands' => $brands,
+        ]);
     }
 
     /**
@@ -61,9 +68,9 @@ class ProductController extends Controller
      */
     public function store(CreateProductRequest $request)
     {
-        $this->brand->createnewProduct($request);
-        return redirect(route('product.index'))->with('success', 'Product Created Successfully');
 
+        $this->productrepository->createnewProduct($request);
+        return redirect(route('product.index'))->with('success', 'Product Created Successfully');
     }
 
     /**
